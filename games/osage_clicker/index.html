@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- cdn lib -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jStorage/0.4.12/jstorage.js"
+        integrity="sha512-/xG2u1+39ezvrTHLgDuWJ07cIOJdBgYxOQ8s/2DkeRWInLMfe4aLBe/5Zd8ECpY/uBKsdY+i1xOEGG4a6RnXHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/58241a5eda.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../../css/shared.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="osagery/smol.png">
+    <script type="module" src="js/index.js" defer></script>
+    <title>OSAG CLICKER!!!</title>
+</head>
+
+<body>
+    <nav>
+        <div class="score-display">
+            <img src="osagery/smol.png" alt="ur oges" id="smol" draggable="false"><b id="score">0</b>
+        </div>
+        <div class="nav-buttons">
+            <button onclick="$('.info.modal').addClass('show')">
+                <i class="fa-solid fa-circle-info"></i>
+            </button>
+            <button onclick="$('.settings.modal').addClass('show')">
+                <i class="fa-solid fa-sliders"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="main-game-contents">
+        <div class="hat">
+            <img src="" alt="hat" hidden>
+        </div>
+        <div class="trail-effect">
+            <img src="osagery/big.png" alt="trail" draggable="false">
+            <img src="osagery/big.png" alt="trail" draggable="false">
+            <img src="osagery/big.png" alt="trail" draggable="false">
+            <img src="osagery/big.png" alt="trail" draggable="false">
+            <img src="osagery/big.png" alt="trail" draggable="false">
+            <img src="osagery/big.png" alt="trail" draggable="false">
+            <img src="osagery/big.png" alt="trail" draggable="false">
+            <img src="osagery/big.png" alt="trail" draggable="false">
+            <img src="osagery/big.png" alt="trail" draggable="false">
+            <img src="osagery/big.png" alt="trail" draggable="false">
+        </div>
+        <img src="osagery/big.png" alt="osagery" id="osag" draggable="false">
+        <div class="rainy-boots">
+            <img src="osagery/non-osagery/rainy boots/0.png" alt="rainy boots">
+        </div>
+        <div>
+            <button data-shows-at="20" onclick="$('.shop.modal').addClass('show')"><i
+                    class="fa-solid fa-cart-shopping"></i></button>
+            <button class="cosmetics-button" onclick="$('.cosmetics.modal').addClass('show')"><i
+                    class="fa-solid fa-shirt"></i></button>
+            <button class="music-road-button" onclick="$('.music-road-unlocks.modal').addClass('show')"><i
+                    class="fa-solid fa-music"></i></button>
+        </div>
+    </div>
+    <div class="incremental-display widget active"></div>
+    <div class="shovel widget">
+        <img id="shovel" src="osagery/upgrades/Shovel.png" alt="shovel" width="100px" draggable="false">
+        <img id="snow" src="osagery/non-osagery/snow-pile.png" alt="snow" width="100px" draggable="false">
+    </div>
+    <div class="silly-thing-that-walks-around widget active"></div>
+    <div class="umbrella widget active"></div>
+    <div class="panties widget active"></div>
+    <div class="flying-objects widget active"></div>
+    <div class="timers widget active">
+        <div class="timer">
+        </div>
+    </div>
+    <div class="music-road widget">
+        <div class="progress-container" draggable="false">
+            <div>
+                <h3>No music is playing right now.</h3>
+                <h4>maybe try unlocking one first?</h4>
+                <audio src="" loop id="music-road-audio-player" draggable="false" controls></audio>
+            </div>
+            <img src="osagery/big.png" alt="e" class="song-cover" draggable="false">
+        </div>
+    </div>
+    <div class="fan widget">
+        <img src="osagery/non-osagery/fan.png" alt="fan" width="100px" draggable="false">
+    </div>
+    <div class="tank widget">
+        <img src="osagery/non-osagery/tank.png" alt="tank" draggable="false">
+    </div>
+    <div class="evil widget active">
+    </div>
+    <div class="settings modal">
+        <div class="content">
+            <h1>Settings</h1>
+        </div>
+        <button class="out">Leave</button>
+    </div>
+    <div class="info modal">
+        <div class="content">
+            <h1>Info</h1>
+            <h3>
+                <p>Game made by GamingDimiGD</p>
+                <p>GitHub source code: <a href="" target="_blank">Here</a></p>
+                <p>Feel free to modify this game!</p>
+                <p>Most arts are drawn by Nukunuku Nigirimeshi or Inabakumori</p>
+                <p>Don't expect me to update much because I have school and stuff</p>
+            </h3>
+        </div>
+        <button class="out">Leave</button>
+    </div>
+    <div class="shop modal">
+        <div class="content">
+            <h1>Shop</h1>
+        </div>
+        <button class="out">Leave</button>
+    </div>
+    <div class="cosmetics modal">
+        <div class="content">
+            <h1>Cosmetics</h1>
+            <div class="cosmetic-selection">
+                <button><i class="fa-solid fa-shirt"></i></button>
+                <button><i class="fa-solid fa-hat-cowboy"></i></button>
+            </div>
+            <div class="cosmetic-display">
+            </div>
+        </div>
+        <button class="out">Leave</button>
+    </div>
+    <div class="music-road-unlocks modal">
+        <div class="content">
+            <h1>Music Road</h1>
+            <div class="term-explain">
+                <p>Buffs: Will activate after you unlock a song</p>
+                <p>Powers: Will activate after you unlock a song and click "Power". You can only power one song at a time.</p>
+                <p>Ogeins = Oge gains</p>
+                <p>Pro tip: If you play on pc, you can try to type out the song name to find it!</p>
+            </div>
+            <button class="nowplaying-toggle">Toggle Now Playing</button>
+            <div class="music-select">
+            </div>
+        </div>
+        <button class="out">Leave</button>
+    </div>
+</body>
+
+</html>
