@@ -25,7 +25,7 @@ export let musicData = [
         },
     },
     {
-        title: "Harunoshiki",
+        title: "Harunanshiki",
         vocals: "Asumi Shuo & Asumi Ririse",
         bpm: 72,
         link: "https://youtu.be/1nZwWpHF0mQ",

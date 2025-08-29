@@ -7,11 +7,19 @@ import { alertModal } from "../../../shared/shared.js"
 import { spawnOsage } from "./particles.js"
 import { loadKeybinds } from "./keybinds.js"
 
+const wrongSongName = (wrongSong, rightSong) => {
+    if (save.musicRoad.currentPower === wrongSong) save.musicRoad.currentPower = rightSong
+    if (save.musicRoad.unlocks.includes(wrongSong)) save.musicRoad.unlocks = save.musicRoad.unlocks.splice(save.musicRoad.unlocks.indexOf(wrongSong), 1).push(rightSong)
+    if (save.musicRoad.nowPlaying === wrongSong) save.musicRoad.nowPlaying = rightSong
+    save.save()
+}
+
 export const onLoad = () => {
     try {
-    score.text(save.score)
-    loadOptions()
-    loadUpgrades()
+        wrongSongName('Harunoshiki', 'Harunanshiki')
+        score.text(save.score)
+        loadOptions()
+        loadUpgrades()
         showAtScore()
         loadCosmetics(save.cosmetics.currentSkin, save.cosmetics.currentHat)
         if (save.options.Rain) rainEffect.reload()
@@ -43,7 +51,7 @@ export const lag = () => {
             onclick: () => {
                 const i = setInterval(() => {
                     let stop = true
-                    const start = performance.now() 
+                    const start = performance.now()
                     spawnOsage({ clientX: Math.random() * 100 * window.innerWidth, clientY: Math.random() * 100 * window.innerHeight }, 1000)
                     while (performance.now() - start < 300 && stop) {
                         Math.sqrt(Math.random());

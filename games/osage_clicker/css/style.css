@@ -701,6 +701,11 @@ button:hover i.smol {
     animation: antiEvil 0.1s ease-in-out infinite alternate;
 }
 
+#evil:active {
+    transition: transform 0.2s ease;
+    animation: antiEvil 0.1s ease-in-out infinite alternate, antiEvilClick 0.1s ease-in-out infinite alternate;
+}
+
 @keyframes antiEvil {
     from {
         transform: translate(3px);
@@ -708,5 +713,14 @@ button:hover i.smol {
 
     to {
         transform: translate(-3px);
+    }
+}
+
+@keyframes antiEvilClick {
+    from {
+        transform: translate(3px) scaleX(1.1) scaleY(0.9) rotate(-5deg);
+    }
+    to {
+        transform: translate(-3px) scaleX(1.1) scaleY(0.9) rotate(5deg);
     }
 }
